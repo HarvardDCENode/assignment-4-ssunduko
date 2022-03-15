@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 List of Videos
+  if (videos.length === 0)
+    | There are no videos in your list. Add a video below
+  .row
+    each video in videos
+     .col-sm-4
+       p Title:  #{video.title}
+       p Description: #{video.description}
+       a(href='/videos/'+video._id) Video Details
+       |
+       |
+       a(href='/videos/delete/' + video._id) Delete Video
+  include addvideo

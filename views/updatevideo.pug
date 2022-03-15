@@ -1,0 +1,12 @@
+.row
+   .col-md-6.col-md-offset-3
+      p Title: #{video.title}
+      p Description: #{video.description}
+      form(method='POST' action="/videos/"+video._id)
+        div.form-group
+          label(for='name') Title:
+          input#name.form-control(type='text', value=video.title name='title')
+        div.form-group
+          label(for='email') Description:
+          input#email.form-control(type='text', value=video.description name='description')
+        button.btn.btn-primary(type='submit') Update Video

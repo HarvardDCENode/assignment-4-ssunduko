@@ -1,0 +1,6 @@
+.row
+   .col-md-6.col-md-offset-3
+      p Title: #{video.title}
+      p Description: #{video.description}
+      form(action="/videos/delete/" + video._id + "?_method=DELETE" method="post")
+        button.btn.btn-primary(type='submit') Delete Video
