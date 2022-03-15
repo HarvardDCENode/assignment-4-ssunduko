@@ -3,6 +3,7 @@
       p Title: #{video.title}
       p Description: #{video.description}
       form(method='POST' action="/videos/"+video._id)
+        div.form-group
           label(for='title') Title:
           input#title.form-control(type='text', value=video.title name='title')
         div.form-group
