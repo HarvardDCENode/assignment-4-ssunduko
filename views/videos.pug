@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h2 List of Videos
+  h2 List of Videos and Reviews
   if (videos.length === 0)
     | There are no videos in your list. Add a video below
   .row
@@ -9,8 +9,11 @@ block content
      .col-sm-4
        p Title:  #{video.title}
        p Description: #{video.description}
-       p Rating: #{video.rating}
-       p Review: #{video.review}
+       each review in video.reviews
+         .row
+           .col-sm-6
+             p Rating:  #{review.rating}
+             p Review: #{review.review}
        a(href='/videos/'+video._id) Video Details
        |
        |

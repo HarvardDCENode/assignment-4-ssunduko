@@ -75,8 +75,10 @@ router.post('/',(req, res, next)=>{
     const videoData  = {
         title: req.body.title,
         description: req.body.description,
-        rating: req.body.rating,
-        review: req.body.review
+        reviews : [{
+            rating: req.body.rating,
+            review: req.body.review
+        }]
     }
     const videoTemp = new video(videoData);
         videoTemp.save()
