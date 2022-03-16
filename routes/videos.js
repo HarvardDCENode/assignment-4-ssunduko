@@ -44,7 +44,7 @@ router.post('/:videoid', (req, res, next)=>{
       var data  = {
          title: req.body.title,
          description: req.body.description
-         }
+      }
       video.set(data);
       video.save().then(()=>{
         res.redirect('/videos');
@@ -73,14 +73,16 @@ router.post('/delete/:videoid', (req, res, next)=>{
 router.post('/',(req, res, next)=>{
 
     const videoData  = {
-    title: req.body.title,
-    description: req.body.description
-  }
-  const videoTemp = new video(videoData);
-    videoTemp.save()
-   .then(()=>{
-     res.redirect('/videos');
-   })
+        title: req.body.title,
+        description: req.body.description,
+        rating: req.body.rating,
+        review: req.body.review
+    }
+    const videoTemp = new video(videoData);
+        videoTemp.save()
+        .then(()=>{
+        res.redirect('/videos');
+    })
    .catch((err)=>{
      if (err){
       console.log(err);

@@ -1,12 +1,23 @@
 h2 Add Video
 
 .row
-    .col-md-6.col-md-offset-3
+    .col-12.col-md-8
         form(method='POST' action="/videos")
-            div.form-group
+            .form-group
                 label(for='name') Title:
                 input#name.form-control(type='text', placeholder='title' name='title')
-            div.form-group
-                label(for='email') Description:
-                input#email.form-control(type='text', placeholder='description' name='description')
+            .form-group
+                label(for='description') Description:
+                input#description.form-control(type='text', placeholder='description' name='description')
+            .form-group
+                label(for='rating') Rating:
+                select#rating.form-control(name="rating")
+                    option 5
+                    option 4
+                    option 3
+                    option 2
+                    option 1
+            .form-group
+                label(for='review') Review:
+                textarea#review.form-control(placeholder='sample review', name='review', rows='10')
             button.btn.btn-primary(type='submit') Add Video
