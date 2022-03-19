@@ -6,9 +6,10 @@ block content
     | There are no videos in your list. Add a video below
   .row
     each video in videos
-     .col-sm-4
+     .col-sm-4.col-md-offset-1
        p Title:  #{video.title}
        p Description: #{video.description}
+       p Average Rating: #{video.averageRating}
        each review in video.reviews
          .row
            .col-sm-6
@@ -18,4 +19,9 @@ block content
        |
        |
        a(href='/videos/delete/' + video._id) Delete Video
+       |
+       |
+       a(href='/videos/review/' + video._id) Add Review
+       br
+       br
   include add-video

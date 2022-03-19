@@ -38,6 +38,17 @@ router.get('/delete/:videoid', (req, res, next)=>{
     });
 });
 
+router.get('/review/:videoid', (req, res, next)=>{
+    video.findOne({'_id': req.params.videoid})
+        .then((video)=>{
+            res.render('add-review', {
+                video: video
+            });
+        }).catch((err)=>{
+        if (err) console.log(err);
+    });
+});
+
 router.post('/:videoid', (req, res, next)=>{
     video.findOne({'_id': req.params.videoid})
     .then((video)=>{
@@ -75,6 +86,8 @@ router.post('/',(req, res, next)=>{
     const videoData  = {
         title: req.body.title,
         description: req.body.description,
+        //TODO: Refactor in the future to calculate average rating
+        averageRating: req.body.rating,
         reviews : [{
             rating: req.body.rating,
             review: req.body.review

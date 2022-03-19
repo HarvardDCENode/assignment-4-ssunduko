@@ -1,5 +1,14 @@
 # Assignment #4 - Express Routing, MongoDB, and Mongoose
 
-The description of this assignment can be found in Canvas at [Assignment #4](https://canvas.harvard.edu/courses/81399/assignments/440348) (Spring 2021)
+Video Review App
+This application allows adding videos and submitting video rating and reviews
+Current functionality is focused on Video CRUD
+Future implementation will include adding extra video rating and reviews
+Current link to additional rating and reviews is just a placeholder
 
-You should build your application in this repo cloned for you in Github Classroom. You'll submit your project and github URLs in Canvas.
+Starting the app
+Create a .env file containing two properties:
+DB_USER=[your mongodb username]
+DB_PWD=[your mongodb password]]
+
+
