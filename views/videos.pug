@@ -14,8 +14,8 @@ block content
            .col-sm-6
              p Rating:  #{review.rating}
              p Review: #{review.review}
-       a(href='/videos/'+video._id) Video Details
+       a(href='/videos/'+video._id) Update Video
        |
        |
        a(href='/videos/delete/' + video._id) Delete Video
-  include addvideo
+  include add-video

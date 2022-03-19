@@ -19,7 +19,7 @@ router.get('/', (req, res, next)=>{
 router.get('/:videoid', (req, res, next)=>{
   video.findOne({'_id': req.params.videoid})
     .then((video)=>{
-      res.render('updatevideo', {
+      res.render('update-video', {
         video: video
       });
     }).catch((err)=>{
@@ -30,7 +30,7 @@ router.get('/:videoid', (req, res, next)=>{
 router.get('/delete/:videoid', (req, res, next)=>{
     video.findOne({'_id': req.params.videoid})
         .then((video)=>{
-            res.render('deletevideo', {
+            res.render('delete-video', {
                 video: video
             });
         }).catch((err)=>{
